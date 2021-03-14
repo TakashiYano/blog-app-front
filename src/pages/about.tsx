@@ -4,8 +4,12 @@ import { Layout } from "src/components/separate/Layout";
 import { HeaderNavigation } from "src/components/shared/HeaderNavigation";
 import { MainDivider } from "src/components/shared/MainDivider";
 import { MainGuide } from "src/components/shared/MainGuide";
+import type { Post } from "src/models/post";
+import useSWR from "swr";
 
 const About = () => {
+  const { data, error } = useSWR<Post>("posts/var");
+
   return (
     <Layout>
       <Head>
@@ -26,7 +30,20 @@ const About = () => {
       </div>
       <MainDivider thin />
       <div className="px-5 py-14">
-        <MainGuide title="Featured" description="おすすめ記事を見つけよう！" />
+        <div className="mx-auto my-0" style={{ maxWidth: "960px", minWidth: "420px" }}>
+          <MainGuide title="Featured" description="おすすめ記事を見つけよう！" />
+          <div className="mt-4 dark:text-white">
+            {error ? <div>failed to load</div> : null}
+            {data ? (
+              <div>
+                <h2>{data.title}</h2>
+                <p>{data.content}</p>
+              </div>
+            ) : (
+              <div>loading...</div>
+            )}
+          </div>
+        </div>
       </div>
     </Layout>
   );

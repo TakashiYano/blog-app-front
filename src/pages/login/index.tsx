@@ -1,7 +1,10 @@
 import Head from "next/head";
+import { EmailIcon } from "src/components/icon/EmailIcon";
+import { GoogleIcon } from "src/components/icon/GoogleIcon";
+import { TwitterIcon } from "src/components/icon/TwitterIcon";
 import { Layout } from "src/components/separate/Layout";
 import { Button } from "src/components/shared/Button";
-import { ListButton } from "src/components/shared/ListButton";
+import { PrimaryButton } from "src/components/shared/PrimaryButton";
 
 const LogInPage = () => {
   return (
@@ -17,52 +20,37 @@ const LogInPage = () => {
         >
           <h1 className="text-xl font-bold dark:text-white">Logoにログイン</h1>
 
-          <ListButton
-            linkProps={{ href: "/login/email" }}
-            variant="link"
-            className="mt-5 text-green-500 border-green-500 hover:bg-green-100 focus:ring-green-300"
-          >
+          <Button id="emailButton" linkProps={{ href: "/login/email" }} color="green">
+            <EmailIcon size="small" />
             メールアドレスでログイン
-          </ListButton>
+          </Button>
 
-          <ListButton
-            button
-            variant="link"
-            className="mt-5 text-blue-500 border-blue-500 hover:bg-blue-100 focus:ring-blue-300"
-            onClick={() => {
-              alert("Twitter");
-            }}
-          >
+          <Button id="twitterButton" button color="blue">
+            <TwitterIcon size="small" />
             Twitterでログイン
-          </ListButton>
+          </Button>
 
-          <ListButton
-            button
-            variant="link"
-            className="mt-5 text-red-500 border-red-500 hover:bg-red-100 focus:ring-red-300"
-            onClick={() => {
-              alert("Google");
-            }}
-          >
+          <Button id="googleButton" button color="red">
+            <GoogleIcon size="small" />
             Sign in with Google
-          </ListButton>
+          </Button>
 
           <p className="mt-5 text-xs dark:text-white">
             サインインすることにより、当社の
-            <Button linkProps={{ href: "/terms" }} variant="link">
+            <PrimaryButton linkProps={{ href: "/terms" }} variant="link">
               利用規約
-            </Button>
+            </PrimaryButton>
             および
-            <Button linkProps={{ href: "/privacy" }} variant="link">
+            <PrimaryButton linkProps={{ href: "/privacy" }} variant="link">
               プライバシー規約
-            </Button>
+            </PrimaryButton>
             に同意したとみなされます。
           </p>
 
           <div className="mt-8 text-center">
-            <Button linkProps={{ href: "/" }} className="text-sm dark:text-green-500" variant="link">
+            <PrimaryButton linkProps={{ href: "/" }} className="text-sm dark:text-green-500" variant="link">
               新規登録はこちら
-            </Button>
+            </PrimaryButton>
           </div>
         </div>
       </div>

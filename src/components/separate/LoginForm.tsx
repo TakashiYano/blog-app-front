@@ -1,21 +1,22 @@
-import * as React from "react";
-import { Button } from "src/components/shared/Button";
+import type { ChangeEvent } from "react";
+import { useState } from "react";
 import { Input } from "src/components/shared/Input";
 import { ListButton } from "src/components/shared/ListButton";
+import { PrimaryButton } from "src/components/shared/PrimaryButton";
 import { Validation } from "src/util/Validation";
 
 export const LoginForm = () => {
-  const [info, setInfo] = React.useState({
+  const [info, setInfo] = useState({
     email: "",
     password: "",
   });
-  const [message, setMessage] = React.useState({
+  const [message, setMessage] = useState({
     email: "",
     password: "",
   });
-  const [loading, setLoading] = React.useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const key = e.target.name;
     const value = e.target.value;
     setInfo({
@@ -75,29 +76,23 @@ export const LoginForm = () => {
           error={message.password}
         />
       </div>
-      <Button
-        button
-        variant="link"
-        className="mt-2 ml-4 text-base"
-        onClick={() => {
-          alert("Hello World!");
-        }}
-      >
+      <PrimaryButton button variant="link" className="mt-2 ml-4 text-base">
         パスワードを表示する
-      </Button>
+      </PrimaryButton>
       <ListButton
         button
-        variant="link"
+        color="green"
         className="mt-5 text-white bg-green-500 border-none hover:bg-green-600 focus:outline-none focus:ring-2 focus:bg-green-600 focus:ring-green-400"
         disable={!canSubmit}
+        // eslint-disable-next-line react/jsx-handler-names
         onClick={submit}
       >
         ログイン
       </ListButton>
       <div className="text-center">
-        <Button linkProps={{ href: "/" }} variant="link" className="mt-8">
+        <PrimaryButton linkProps={{ href: "/" }} variant="link" className="mt-8">
           パスワードを忘れた方はこちら
-        </Button>
+        </PrimaryButton>
       </div>
     </div>
   );

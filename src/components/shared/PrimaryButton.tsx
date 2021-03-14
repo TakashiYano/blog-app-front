@@ -5,9 +5,9 @@ import type { DOMAttributes, ReactNode, VFC } from "react";
 
 type Common = {
   children: ReactNode;
-  variant?: "primary" | "caution";
-  color?: "green";
+  variant?: "solid" | "outline" | "ghost" | "link";
   className?: string;
+  coloredTextDefault?: boolean;
   disable?: boolean;
 };
 
@@ -22,14 +22,19 @@ const isButton = (props: Button | Link): props is Button => {
   return "button" in props;
 };
 
-export const ListButton: VFC<Button | Link> = (props) => {
+export const PrimaryButton: VFC<Button | Link> = (props) => {
   const className = cc([
     props.className,
-    "w-full flex items-center text-sm px-4 md:px-6 h-9",
+    "inline-flex items-center jsutify-center rounded-full",
     {
-      "hover:bg-green-50": props.variant === "primary",
-      "text-pink-600 hover:bg-pink-50": props.variant === "caution",
-      "text-white bg-green-500 hover:bg-green-600 justify-center": props.color === "green",
+      "text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:bg-green-600 focus:ring-green-400":
+        props.variant === "solid",
+      "border text-green-500 border-green-500 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-green-300":
+        props.variant === "outline",
+      "hover:bg-gray-100 text-green-500 focus:outline-none focus:ring-2 focus:ring-green-400":
+        props.variant === "ghost",
+      "hover:underline text-green-500": props.variant === "link",
+      "text-green-500": props.coloredTextDefault,
     },
   ]);
 

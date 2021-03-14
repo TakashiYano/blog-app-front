@@ -2,7 +2,6 @@ import cc from "classcat";
 import type { LinkProps } from "next/link";
 import Link from "next/link";
 import type { ReactNode, VFC } from "react";
-import React from "react";
 
 type Common = {
   children: ReactNode;

@@ -7,12 +7,12 @@ module.exports = {
   plugins: ["import", "simple-import-sort", "react-hooks"],
   extends: [
     "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
     "prettier",
-    "prettier/@typescript-eslint",
-    "plugin:tailwind/recommended"
+    "plugin:tailwind/recommended",
   ],
   rules: {
     "no-console": ["error", { allow: ["warn", "info", "error"] }],
@@ -20,10 +20,19 @@ module.exports = {
     "prefer-arrow-callback": "error",
     "func-style": ["error", "expression"],
     "arrow-body-style": ["error", "always"],
-    // "no-restricted-imports": ["error", { paths: [{ name: "react", importNames: ["default"] }] }],
+    "no-restricted-imports": ["error", { paths: [{ name: "react", importNames: ["default"] }] }],
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "react/display-name": "error",
+    "react/jsx-handler-names": [
+      "error",
+      {
+        eventHandlerPrefix: "handle",
+        eventHandlerPropPrefix: "on",
+        checkLocalVariables: true,
+        checkInlineFunction: true,
+      },
+    ],
     "react/destructuring-assignment": ["error", "never"],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
