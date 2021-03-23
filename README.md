@@ -1,6 +1,6 @@
-# blog-app-front
+# アプリ概要
 
-## 使用技術(Frontend)
+## 使用技術
 
 - [React](https://ja.reactjs.org/)
   - Facebook 製 UI ライブラリ。
@@ -15,37 +15,8 @@
 - [Jest](https://jestjs.io/ja/)
   - Facebook 製の JavaScript のテスティングフレームワークです。テストに関する様々な機能を提供しており、ドキュメントも豊富かつ実績もある。
 
-## セットアップ
+## 使い方
 
-### リポジトリのクローン
+## 苦労した点
 
-コマンドで行う場合
-
-```
-git clone https://github.com/TakashiYano/blog-app-front.git
-```
-
-VS Code で行う場合は、リポジトリをクローンする（英語だと Clone Repository）というボタンがあるので、それをクリックして、`https://github.com/TakashiYano/blog-app-front.git` を入力してエンターを押す。
-
-### 依存関係のインストール
-
-ターミナルを開き、下記コマンドで依存関係をインストールする。以上で、環境構築は完了。
-
-```
-yarn
-```
-
-## 開発する
-
-開発を行う場合
-
-```
-yarn dev // localhost:3000 で立ち上がる
-```
-
-本番の動作確認を行う場合
-
-```
-yarn build
-yarn start // localhost:3000 で立ち上がる。dev中はportを変える必要がある。
-```
+## 改善点
