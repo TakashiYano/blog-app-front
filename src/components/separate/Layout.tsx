@@ -4,10 +4,10 @@ import { Header } from "src/components/separate/Header";
 
 export const Layout = (props: { children: ReactNode }) => {
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="bg-green-100 dark:bg-gray-700">{props.children}</main>
+      <main className="flex-1 bg-gray-200 dark:bg-gray-700">{props.children}</main>
       <Footer />
-    </>
+    </div>
   );
 };

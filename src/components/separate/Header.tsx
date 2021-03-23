@@ -1,8 +1,7 @@
-import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { SearchIcon } from "src/components/icon/SearchIcon";
-import { PrimaryButton } from "src/components/shared/PrimaryButton";
+import { SearchIcon } from "src/components/icon/Search";
+import { Button } from "src/components/shared/Button";
 
 export const Header = () => {
   const [mounted, setMounted] = useState(false);
@@ -19,17 +18,20 @@ export const Header = () => {
         className="flex items-center justify-between h-16 px-5 mx-auto my-0 md:px-10"
         style={{ maxWidth: "1200px", minWidth: "420px" }}
       >
-        <h1 className="dark:text-white">
-          <Link href="/">
-            <a className="py-1 text-4xl font-bold">Logo</a>
-          </Link>
-        </h1>
-
+        <Button
+          linkProps={{ href: "/" }}
+          id="titleButton"
+          bgColor="transparent"
+          textColor="black"
+          size="vertical"
+          className="text-4xl"
+        >
+          Share Note
+        </Button>
         <div className="flex items-center">
-          <PrimaryButton linkProps={{ href: "/search" }} variant="ghost" className="p-2">
-            <SearchIcon size="small" />
-          </PrimaryButton>
-
+          <Button linkProps={{ href: "/search" }} id="searchButton" bgColor="ghost" textColor="green" size="same">
+            <SearchIcon />
+          </Button>
           <button
             aria-label="Toggle Dark Mode"
             type="button"
@@ -65,10 +67,9 @@ export const Header = () => {
               </svg>
             )}
           </button>
-
-          <PrimaryButton linkProps={{ href: "/login" }} className="px-5 py-2 ml-5 font-bold" variant="solid">
+          <Button linkProps={{ href: "/login" }} id="loginButton" bgColor="green" className="ml-5">
             Login
-          </PrimaryButton>
+          </Button>
         </div>
       </div>
     </header>

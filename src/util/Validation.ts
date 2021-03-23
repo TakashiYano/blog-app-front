@@ -17,8 +17,8 @@ const emailValidation = (email: string): string => {
 const passwordValidation = (password: string): string => {
   if (!password) return "パスワードを入力してください";
 
-  const regex = /^(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,}$/i;
-  if (!regex.test(password)) return "パスワードは半角英数字をそれぞれ1種類以上含む8文字以上で入力してください";
+  const regex = /^(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}$/i;
+  if (!regex.test(password)) return "半角英数字をそれぞれ1種類以上含む6文字以上でパスワードを入力してください";
 
   return "";
 };

@@ -4,6 +4,8 @@ import TextareaAutosize from "react-textarea-autosize";
 
 type Common = {
   id: string;
+  name?: string;
+  type?: string;
   label?: string;
   addon?: string;
   error?: string;
@@ -38,9 +40,9 @@ export const Input: VFC<Input> = (props) => {
           />
         ) : (
           <input
-            type="text"
+            type={props.type}
             id={props.id}
-            name={props.id}
+            name={props.name}
             value={props.value}
             placeholder={props.placeholder}
             onChange={props.onChange}

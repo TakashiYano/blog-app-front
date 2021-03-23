@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Button } from "src/components/shared/Button";
 
 const items = [
   { href: "/terms", label: "利用規約" },
@@ -11,11 +12,16 @@ export const Footer = () => {
   return (
     <footer className="py-10 bg-white border-t border-gray-300 dark:border-gray-500 dark:bg-gray-800">
       <div className="px-5 mx-auto my-0 md:px-10" style={{ maxWidth: "1200px", minWidth: "420px" }}>
-        <h1 className="dark:text-white">
-          <Link href="/">
-            <a className="text-3xl font-bold">Logo</a>
-          </Link>
-        </h1>
+        <Button
+          linkProps={{ href: "/" }}
+          id="black"
+          bgColor="transparent"
+          textColor="black"
+          size="vertical"
+          className="text-3xl"
+        >
+          Share Note
+        </Button>
         <ul>
           {items.map(({ href, label }) => {
             return (
@@ -37,7 +43,7 @@ export const Footer = () => {
         </ul>
         <div className="mt-6">
           <small className="dark:text-white" lang="en">
-            copyright LOGO All Rights Reserved
+            copyright ShareNote All Rights Reserved
           </small>
         </div>
       </div>

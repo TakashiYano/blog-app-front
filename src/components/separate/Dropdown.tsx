@@ -1,5 +1,6 @@
 import { Menu, Transition } from "@headlessui/react";
 import type { VFC } from "react";
+import { SignOut } from "src/components/icon/SignOut";
 import { ListButton } from "src/components/shared/ListButton";
 
 type Props = { label: string };
@@ -9,7 +10,7 @@ export const Dropdown: VFC<Props> = (props) => {
     <Menu>
       {({ open }) => {
         return (
-          <>
+          <div>
             <span className="rounded-md shadow-sm">
               <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 transition duration-150 ease-in-out rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800">
                 <span>{props.label}</span>
@@ -22,7 +23,6 @@ export const Dropdown: VFC<Props> = (props) => {
                 </svg>
               </Menu.Button>
             </span>
-
             <Transition
               show={open}
               enter="transition ease-out duration-100"
@@ -40,11 +40,10 @@ export const Dropdown: VFC<Props> = (props) => {
                   <p className="text-sm leading-5">Signed in as</p>
                   <p className="text-sm font-medium text-gray-900 truncate leading-5">taka@example.com</p>
                 </div>
-
                 <div className="py-1">
                   <Menu.Item>
                     <ListButton linkProps={{ href: "#account-settings" }} variant="primary">
-                      Account settings
+                      プロフィール設定
                     </ListButton>
                   </Menu.Item>
                   <Menu.Item>
@@ -52,12 +51,10 @@ export const Dropdown: VFC<Props> = (props) => {
                       Support
                     </ListButton>
                   </Menu.Item>
-                  <Menu.Item
-                    as="span"
-                    disabled
-                    className="flex justify-between w-full px-4 py-2 text-sm text-left text-gray-700 opacity-50 cursor-not-allowed leading-5"
-                  >
-                    New feature (soon)
+                  <Menu.Item>
+                    <ListButton linkProps={{ href: "#New feature (soon)" }} disabled>
+                      New feature (soon)
+                    </ListButton>
                   </Menu.Item>
                   <Menu.Item>
                     <ListButton linkProps={{ href: "#license" }} variant="primary">
@@ -65,17 +62,16 @@ export const Dropdown: VFC<Props> = (props) => {
                     </ListButton>
                   </Menu.Item>
                 </div>
-
                 <div className="py-1">
                   <Menu.Item>
-                    <ListButton linkProps={{ href: "#sign-out" }} variant="caution">
-                      Sign out
+                    <ListButton linkProps={{ href: "#sign-out" }} startIcon={<SignOut />} variant="caution">
+                      ログアウト
                     </ListButton>
                   </Menu.Item>
                 </div>
               </Menu.Items>
             </Transition>
-          </>
+          </div>
         );
       }}
     </Menu>

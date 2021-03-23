@@ -8,7 +8,7 @@ export const MainDivider: VFC<Props> = (props) => {
       className={
         props.thin
           ? "border-t border-gray-300 dark:border-gray-500"
-          : "h-3 border-t border-b border-gray-300 dark:border-gray-500 bg-green-50 dark:bg-gray-800"
+          : "h-3 border-t border-b border-gray-300 dark:border-gray-500 bg-gray-50 dark:bg-gray-800"
       }
     />
   );
