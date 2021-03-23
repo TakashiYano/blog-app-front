@@ -1,11 +1,12 @@
+import type { NextPage } from "next";
 import Head from "next/head";
 import { Layout } from "src/components/separate/Layout";
 
-const PrivacyPolicy = () => {
+const PrivacyPolicy: NextPage = () => {
   return (
     <Layout>
       <Head>
-        <title>プライバシーポリシー</title>
+        <title>Privacy</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="px-5 py-14">

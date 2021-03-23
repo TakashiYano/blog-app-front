@@ -1,11 +1,12 @@
+import type { NextPage } from "next";
 import Head from "next/head";
 import { Layout } from "src/components/separate/Layout";
 
-const Terms = () => {
+const Terms: NextPage = () => {
   return (
     <Layout>
       <Head>
-        <title>利用規約</title>
+        <title>Terms</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="px-5 py-14">

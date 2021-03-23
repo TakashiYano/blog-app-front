@@ -1,60 +1,76 @@
+import type { NextPage } from "next";
 import Head from "next/head";
+import { ChevronLeft } from "src/components/icon/ChevronLeft";
 import { EmailIcon } from "src/components/icon/EmailIcon";
 import { GoogleIcon } from "src/components/icon/GoogleIcon";
 import { TwitterIcon } from "src/components/icon/TwitterIcon";
-import { Layout } from "src/components/separate/Layout";
 import { Button } from "src/components/shared/Button";
-import { PrimaryButton } from "src/components/shared/PrimaryButton";
 
-const LogInPage = () => {
+const LogInPage: NextPage = () => {
   return (
-    <Layout>
+    <div>
       <Head>
-        <title>ログイン</title>
+        <title>Login</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="px-5 py-14">
-        <div
-          className="px-5 py-8 mx-auto my-0 bg-white border border-gray-300 md:px-10 dark:border-gray-500 rounded-md dark:bg-gray-800"
-          style={{ maxWidth: "960px", minWidth: "420px" }}
-        >
-          <h1 className="text-xl font-bold dark:text-white">Logoにログイン</h1>
-
-          <Button id="emailButton" linkProps={{ href: "/login/email" }} color="green">
-            <EmailIcon size="small" />
+      <div className="w-screen h-screen bg-gray-200 dark:bg-gray-700">
+        <Button button id="backButton" bgColor="transparent" className="absolute left-2">
+          <ChevronLeft />
+        </Button>
+        <div className="flex flex-col justify-center h-screen">
+          <div className="flex justify-center mb-16">
+            <h1 className="text-4xl font-bold dark:text-white">Logo</h1>
+          </div>
+          <Button
+            linkProps={{ href: "/login/email" }}
+            id="emailButton"
+            bgColor="transparent"
+            borderColor="green"
+            textColor="green"
+            startIcon={<EmailIcon />}
+            size="large"
+            className="mx-auto my-4 w-96"
+          >
             メールアドレスでログイン
           </Button>
-
-          <Button id="twitterButton" button color="blue">
-            <TwitterIcon size="small" />
+          <Button
+            button
+            id="googleButton"
+            bgColor="transparent"
+            borderColor="red"
+            textColor="red"
+            startIcon={<GoogleIcon />}
+            size="large"
+            className="mx-auto my-4 w-96"
+          >
+            Googleでログイン
+          </Button>
+          <Button
+            button
+            id="twitterButton"
+            bgColor="transparent"
+            borderColor="blue"
+            textColor="blue"
+            startIcon={<TwitterIcon />}
+            size="large"
+            className="mx-auto my-4 w-96"
+          >
             Twitterでログイン
           </Button>
-
-          <Button id="googleButton" button color="red">
-            <GoogleIcon size="small" />
-            Sign in with Google
-          </Button>
-
-          <p className="mt-5 text-xs dark:text-white">
-            サインインすることにより、当社の
-            <PrimaryButton linkProps={{ href: "/terms" }} variant="link">
-              利用規約
-            </PrimaryButton>
-            および
-            <PrimaryButton linkProps={{ href: "/privacy" }} variant="link">
-              プライバシー規約
-            </PrimaryButton>
-            に同意したとみなされます。
-          </p>
-
-          <div className="mt-8 text-center">
-            <PrimaryButton linkProps={{ href: "/" }} className="text-sm dark:text-green-500" variant="link">
+          <div className="mt-4 text-center">
+            <Button
+              linkProps={{ href: "/" }}
+              id="green"
+              bgColor="transparent"
+              textColor="green"
+              className="text-sm hover:underline"
+            >
               新規登録はこちら
-            </PrimaryButton>
+            </Button>
           </div>
         </div>
       </div>
-    </Layout>
+    </div>
   );
 };
 

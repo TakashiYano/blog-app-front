@@ -1,18 +1,23 @@
+import type { NextPage } from "next";
 import Head from "next/head";
-import { Layout } from "src/components/separate/Layout";
+import { ChevronLeft } from "src/components/icon/ChevronLeft";
 import { LoginForm } from "src/components/separate/LoginForm";
+import { Button } from "src/components/shared/Button";
 
-const Email = () => {
+const Email: NextPage = () => {
   return (
-    <Layout>
+    <div>
       <Head>
-        <title>Login</title>
+        <title>EmailLogin</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="px-5 py-14">
+      <div className="w-screen h-screen bg-gray-200 dark:bg-gray-700">
+        <Button button id="backButton" bgColor="transparent" className="absolute left-2">
+          <ChevronLeft />
+        </Button>
         <LoginForm />
       </div>
-    </Layout>
+    </div>
   );
 };
 

@@ -1,11 +1,12 @@
+import type { NextPage } from "next";
 import Head from "next/head";
 import { Layout } from "src/components/separate/Layout";
 
-const Commerce = () => {
+const Commerce: NextPage = () => {
   return (
     <Layout>
       <Head>
-        <title>特定商取引法に基づく表記</title>
+        <title>Commerce</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="px-5 py-14">
