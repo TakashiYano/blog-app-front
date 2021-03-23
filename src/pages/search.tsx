@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import { SearchIcon } from "src/components/icon/Search";
 import { Layout } from "src/components/separate/Layout";
 import { Button } from "src/components/shared/Button";
@@ -9,10 +8,6 @@ import { Input } from "src/components/shared/Input";
 const Search: NextPage = () => {
   return (
     <Layout>
-      <Head>
-        <title>Search</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <div className="py-14">
         <div className="px-5 mx-auto my-0 md:px-10" style={{ maxWidth: "960px", minWidth: "420px" }}>
           <form className="flex justify-center">

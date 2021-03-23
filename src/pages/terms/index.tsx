@@ -1,14 +1,9 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import { Layout } from "src/components/separate/Layout";
 
 const Terms: NextPage = () => {
   return (
     <Layout>
-      <Head>
-        <title>Terms</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <div className="px-5 py-14">
         <div
           className="px-5 py-8 mx-auto my-0 bg-white border border-gray-300 dark:border-gray-500 rounded-md dark:bg-gray-800 md:px-10 prose prose-md prose-green dark:text-gray-400"

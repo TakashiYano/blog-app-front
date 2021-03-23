@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import { ChevronLeft } from "src/components/icon/ChevronLeft";
 import { EmailIcon } from "src/components/icon/EmailIcon";
 import { GoogleIcon } from "src/components/icon/GoogleIcon";
@@ -9,17 +8,13 @@ import { Button } from "src/components/shared/Button";
 const LogInPage: NextPage = () => {
   return (
     <div>
-      <Head>
-        <title>Login</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <div className="w-screen h-screen bg-gray-200 dark:bg-gray-700">
         <Button button id="backButton" bgColor="transparent" className="absolute left-2">
           <ChevronLeft />
         </Button>
         <div className="flex flex-col justify-center h-screen">
           <div className="flex justify-center mb-16">
-            <h1 className="text-4xl font-bold dark:text-white">Logo</h1>
+            <h1 className="text-4xl font-bold dark:text-white">Share Note</h1>
           </div>
           <Button
             linkProps={{ href: "/login/email" }}
