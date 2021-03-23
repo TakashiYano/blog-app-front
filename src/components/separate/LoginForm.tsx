@@ -1,8 +1,7 @@
 import type { ChangeEvent } from "react";
 import { useState } from "react";
+import { Button } from "src/components/shared/Button";
 import { Input } from "src/components/shared/Input";
-import { ListButton } from "src/components/shared/ListButton";
-import { PrimaryButton } from "src/components/shared/PrimaryButton";
 import { Validation } from "src/util/Validation";
 
 export const LoginForm = () => {
@@ -43,21 +42,19 @@ export const LoginForm = () => {
 
   const submit = () => {
     setLoading(true);
+    // 追加処理
     setLoading(false);
   };
 
   return (
-    <div
-      className="px-5 py-8 mx-auto my-0 bg-white border border-gray-300 dark:border-gray-500 rounded-md dark:bg-gray-800 md:px-10"
-      style={{ maxWidth: "960px", minWidth: "420px" }}
-    >
-      <p className="text-base text-center dark:text-white">
-        メールアドレスとパスワードを
-        <br />
-        入力してください。
-      </p>
-      <div className="mt-5">
+    <div className="flex flex-col justify-center h-screen">
+      <div className="flex justify-center mb-16">
+        <h1 className="text-4xl font-bold dark:text-white">Share Note</h1>
+      </div>
+      <div className="mx-auto my-4 w-96">
         <Input
+          type="email"
+          name="email"
           id="email"
           label="メールアドレス"
           placeholder="メールアドレスを入力"
@@ -66,8 +63,10 @@ export const LoginForm = () => {
           error={message.email}
         />
       </div>
-      <div className="mt-4">
+      <div className="mx-auto mt-4 w-96">
         <Input
+          type="password"
+          name="password"
           id="password"
           label="パスワード"
           placeholder="半角英数字をそれぞれ1種類以上含む6文字以上"
@@ -76,23 +75,25 @@ export const LoginForm = () => {
           error={message.password}
         />
       </div>
-      <PrimaryButton button variant="link" className="mt-2 ml-4 text-base">
-        パスワードを表示する
-      </PrimaryButton>
-      <ListButton
+      <div className="mx-auto mb-4 w-96">
+        <Button button id="green" bgColor="transparent" textColor="green" className="text-base hover:underline">
+          パスワードを表示する
+        </Button>
+      </div>
+      <Button
         button
-        color="green"
-        className="mt-5 text-white bg-green-500 border-none hover:bg-green-600 focus:outline-none focus:ring-2 focus:bg-green-600 focus:ring-green-400"
-        disable={!canSubmit}
+        id="loginButton"
+        className="mx-auto my-4 w-96"
+        disabled={!canSubmit}
         // eslint-disable-next-line react/jsx-handler-names
         onClick={submit}
       >
         ログイン
-      </ListButton>
-      <div className="text-center">
-        <PrimaryButton linkProps={{ href: "/" }} variant="link" className="mt-8">
+      </Button>
+      <div className="mx-auto mt-4">
+        <Button button id="green" bgColor="transparent" textColor="green" className="hover:underline">
           パスワードを忘れた方はこちら
-        </PrimaryButton>
+        </Button>
       </div>
     </div>
   );
