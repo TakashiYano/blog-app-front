@@ -7,17 +7,19 @@ type Props = {
 };
 
 export const GoogleIcon: VFC<Props> = (props) => {
-  const className = cc([
-    props.className,
-    "my-auto",
-    {
-      "w-8 h-8 mx-3": props.size === "large",
-      "w-6 h-6 mx-2": props.size === "small",
-    },
-  ]);
-
   return (
-    <svg className={className} viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      className={cc([
+        props.className,
+        {
+          "w-8 h-8": props.size === "large",
+          "w-6 h-6": props.size === "small",
+        },
+      ])}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         d="M21.5635 11.2525C21.5635 10.5047 21.5029 9.75296 21.3736 9.01733H10.998V13.2532H16.9396C16.6931 14.6194 15.9009 15.8279 14.7408 16.5959V19.3444H18.2856C20.3671 17.4285 21.5635 14.5992 21.5635 11.2525Z"
         fill="#4285F4"
@@ -36,4 +38,10 @@ export const GoogleIcon: VFC<Props> = (props) => {
       />
     </svg>
   );
+};
+
+// Propsのデフォルト値
+GoogleIcon.defaultProps = {
+  className: "",
+  size: "small",
 };
