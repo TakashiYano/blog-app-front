@@ -1,6 +1,6 @@
-const usernameValidation = (username: string): string => {
-  if (!username) return "ユーザー名を入力してください";
-  if (username.length < 4) return "ユーザー名は4文字以上で入力してください";
+const creatorValidation = (creator: string): string => {
+  if (!creator) return "クリエイター名を入力してください";
+  if (creator.length < 4) return "クリエイター名は4文字以上で入力してください";
 
   return "";
 };
@@ -26,8 +26,8 @@ const passwordValidation = (password: string): string => {
 export class Validation {
   static formValidate = (type: string, value: string) => {
     switch (type) {
-      case "username":
-        return usernameValidation(value);
+      case "creator":
+        return creatorValidation(value);
       case "email":
         return emailValidation(value);
       case "password":

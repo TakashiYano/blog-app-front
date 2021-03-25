@@ -54,7 +54,7 @@ const LogInPage: NextPage = () => {
           </Button>
           <div className="mt-4 text-center">
             <Button
-              linkProps={{ href: "/" }}
+              linkProps={{ href: "/signup" }}
               id="green"
               bgColor="transparent"
               textColor="green"
