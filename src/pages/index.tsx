@@ -4,19 +4,19 @@ import { HeaderNavigation } from "src/components/separate/HeaderNavigation";
 import { Layout } from "src/components/separate/Layout";
 
 const PAGES = [
-  { href: "/login", label: "ログインページ", isDone: true },
-  { href: "/signup", label: "新規登録ページ", isDone: false },
-  { href: "/registration", label: "初回プロフィール登録ページ", isDone: false },
-  { href: "/user/foo", label: "ユーザーページ", isDone: false },
-  { href: "/search", label: "投稿検索ページ", isDone: true },
-  { href: "/post/foo", label: "投稿ページ", isDone: false },
-  { href: "/settings", label: "設定一覧ページ", isDone: false },
-  { href: "/settings/profile", label: "プロフィール変更ページ", isDone: false },
-  { href: "/settings/account", label: "SNS連携ページ", isDone: false },
-  { href: "/settings/notification", label: "通知設定ページ", isDone: false },
-  { href: "/terms", label: "利用規約ページ", isDone: true },
-  { href: "/terms/transaction-law", label: "特定商取引法ページ", isDone: true },
-  { href: "/privacy", label: "プライバシーポリシーページ", isDone: true },
+  { href: "/login", file: "/login.tsx", label: "ログインページ", isDone: true },
+  { href: "/signup", file: "/signup.tsx", label: "新規登録ページ", isDone: false },
+  { href: "/registration", file: "/registration.tsx", label: "初回プロフィール登録ページ", isDone: false },
+  { href: "/user/foo", file: "/users/[userId].tsx", label: "ユーザーページ", isDone: false },
+  { href: "/search", file: "/search.tsx", label: "投稿検索ページ", isDone: true },
+  { href: "/post/foo", file: "/posts/[postId].tsx", label: "投稿ページ", isDone: false },
+  { href: "/settings", file: "/settings.tsx", label: "設定一覧ページ", isDone: false },
+  { href: "/settings/profile", file: "/settings/profile.tsx", label: "プロフィール変更ページ", isDone: false },
+  { href: "/settings/account", file: "/settings/account.tsx", label: "SNS連携ページ", isDone: false },
+  { href: "/settings/notification", file: "/settings/notification.tsx", label: "通知設定ページ", isDone: false },
+  { href: "/terms", file: "/terms.tsx", label: "利用規約ページ", isDone: true },
+  { href: "/terms/transaction-law", file: "/terms/transaction-law.tsx", label: "特定商取引法ページ", isDone: true },
+  { href: "/privacy", file: "/privacy.tsx", label: "プライバシーポリシーページ", isDone: true },
 ] as const;
 
 const Index: NextPage = () => {
@@ -34,9 +34,10 @@ const Index: NextPage = () => {
               return (
                 <li key={page.href}>
                   <Link href={page.href}>
-                    <a className="block p-3 border border-gray-300 dark:text-white dark:border-gray-500">{`${
-                      page.isDone ? "✅ " : ""
-                    }${page.label}`}</a>
+                    <a className="block p-3 border border-gray-300 dark:text-white dark:border-gray-500">
+                      <div>{`${page.isDone ? "✅ " : ""}${page.label}`}</div>
+                      <div>pages{page.file} のページです</div>
+                    </a>
                   </Link>
                 </li>
               );
