@@ -11,8 +11,10 @@ const Search: NextPage = () => {
       <div className="py-14">
         <div className="px-5 mx-auto my-0 md:px-10" style={{ maxWidth: "960px", minWidth: "420px" }}>
           <form className="flex justify-center">
-            <Input id="search" placeholder="キーワードを入力" />
-            <Button button id="searchButton" bgColor="transparent" textColor="green" className="ml-2">
+            <div className="w-screen">
+              <Input id="search" placeholder="キーワードを入力" />
+            </div>
+            <Button button id="searchButton" bgColor="transparent" textColor="green">
               <SearchIcon />
             </Button>
           </form>

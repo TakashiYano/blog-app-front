@@ -5,7 +5,7 @@ import { Layout } from "src/components/separate/Layout";
 
 const PAGES = [
   { href: "/login", file: "/login.tsx", label: "ログインページ", isDone: true },
-  { href: "/signup", file: "/signup.tsx", label: "新規登録ページ", isDone: false },
+  { href: "/signup", file: "/signup.tsx", label: "新規登録ページ", isDone: true },
   { href: "/registration", file: "/registration.tsx", label: "初回プロフィール登録ページ", isDone: false },
   { href: "/user/foo", file: "/users/[userId].tsx", label: "ユーザーページ", isDone: false },
   { href: "/search", file: "/search.tsx", label: "投稿検索ページ", isDone: true },
