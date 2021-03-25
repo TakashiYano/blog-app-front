@@ -49,7 +49,7 @@ export const LoginForm = () => {
   return (
     <div className="flex flex-col justify-center h-screen">
       <div className="flex justify-center mb-16">
-        <h1 className="text-4xl font-bold dark:text-white">Share Note</h1>
+        <h1 className="text-4xl font-bold cursor-default dark:text-white">Share Note</h1>
       </div>
       <div className="mx-auto my-4 w-96">
         <Input

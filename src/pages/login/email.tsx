@@ -7,7 +7,7 @@ const Email: NextPage = () => {
   return (
     <div>
       <div className="w-screen h-screen bg-gray-200 dark:bg-gray-700">
-        <Button button id="backButton" bgColor="transparent" className="absolute left-2">
+        <Button button id="backButton" bgColor="transparent" className="absolute mx-auto my-4 left-2">
           <ChevronLeft />
         </Button>
         <LoginForm />

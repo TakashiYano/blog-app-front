@@ -9,12 +9,12 @@ const SignUpPage: NextPage = () => {
   return (
     <div>
       <div className="w-screen h-screen bg-gray-200 dark:bg-gray-700">
-        <Button button id="backButton" bgColor="transparent" className="absolute left-2">
+        <Button button id="backButton" bgColor="transparent" className="absolute mx-auto my-4 left-2">
           <ChevronLeft />
         </Button>
         <div className="flex flex-col justify-center h-screen">
           <div className="flex justify-center mb-16">
-            <h1 className="text-4xl font-bold dark:text-white">Share Note</h1>
+            <h1 className="text-4xl font-bold cursor-default dark:text-white">Share Note</h1>
           </div>
           <Button
             linkProps={{ href: "/signup/email" }}
