@@ -673,10 +673,10 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@tailwindcss/jit@0.1.11":
-  version "0.1.11"
-  resolved "https://registry.yarnpkg.com/@tailwindcss/jit/-/jit-0.1.11.tgz#d28f0e8da35092192f5eaa4cd86d9b82e0f75add"
-  integrity sha512-LvqMA1PHkRxlqAPGRduWJ7QslwxMEbA5nj5nTyYUstJpBfXL1zrpzpi4cwX/rqchuu3O1FrcB5wNnN9NhU2WFA==
+"@tailwindcss/jit@0.1.13":
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/jit/-/jit-0.1.13.tgz#247e1d88908173d59b8868b0cf658c94e5aaac21"
+  integrity sha512-UJ3dR4IrY5v7KK7u7qPa/ffoOcLrW183WLsRXFORZF3TxnwZAVFChZ0lLFE0Vd1DCgH2Lp5DyDFQrxglfPq09Q==
   dependencies:
     chokidar "^3.5.1"
     dlv "^1.1.3"
