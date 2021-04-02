@@ -32,7 +32,7 @@
     "swr": "0.5.5"
   },
   "devDependencies": {
-    "@headlessui/react": "0.3.1",
+    "@headlessui/react": "0.3.2",
     "@tailwindcss/jit": "0.1.18",
     "@tailwindcss/typography": "0.4.0",
     "@testing-library/react": "11.2.6",
